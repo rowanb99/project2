@@ -112,6 +112,12 @@
 		<Unit filename="/users/guest/r/rowanb99/project2/CommAutomaton.h">
 			<Option target="project2"/>
 		</Unit>
+		<Unit filename="/users/guest/r/rowanb99/project2/DatalogProgram.cpp">
+			<Option target="project2"/>
+		</Unit>
+		<Unit filename="/users/guest/r/rowanb99/project2/DatalogProgram.h">
+			<Option target="project2"/>
+		</Unit>
 		<Unit filename="/users/guest/r/rowanb99/project2/EOF_Automaton.cpp">
 			<Option target="project2"/>
 		</Unit>
@@ -152,6 +158,12 @@
 			<Option target="project2"/>
 		</Unit>
 		<Unit filename="/users/guest/r/rowanb99/project2/MultiplyAutomaton.h">
+			<Option target="project2"/>
+		</Unit>
+		<Unit filename="/users/guest/r/rowanb99/project2/Parser.cpp">
+			<Option target="project2"/>
+		</Unit>
+		<Unit filename="/users/guest/r/rowanb99/project2/Parser.h">
 			<Option target="project2"/>
 		</Unit>
 		<Unit filename="/users/guest/r/rowanb99/project2/PeriodAutomaton.cpp">

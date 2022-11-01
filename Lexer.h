@@ -29,6 +29,8 @@ public:
 
     string lexerToString();
 
+    vector<Token*> lexerResults();
+
 };
 
 #endif // LEXER_H

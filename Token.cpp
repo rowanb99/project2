@@ -15,6 +15,9 @@ string Token::toString() {
     returnString = "(" + stringifyToken(this->tokenType) + ",\"" + this->tokenDescription + "\"," + lineNum + ")";
     return returnString;
 }
+TokenType Token::getType() {
+    return tokenType;
+}
 string Token::getDescription() {
     return tokenDescription;
 }

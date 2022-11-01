@@ -258,6 +258,33 @@ CommAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/CommAutomaton.cpp.s
 .PHONY : CommAutomaton.cpp.s
 
+DatalogProgram.o: DatalogProgram.cpp.o
+
+.PHONY : DatalogProgram.o
+
+# target to build an object file
+DatalogProgram.cpp.o:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/DatalogProgram.cpp.o
+.PHONY : DatalogProgram.cpp.o
+
+DatalogProgram.i: DatalogProgram.cpp.i
+
+.PHONY : DatalogProgram.i
+
+# target to preprocess a source file
+DatalogProgram.cpp.i:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/DatalogProgram.cpp.i
+.PHONY : DatalogProgram.cpp.i
+
+DatalogProgram.s: DatalogProgram.cpp.s
+
+.PHONY : DatalogProgram.s
+
+# target to generate assembly for a file
+DatalogProgram.cpp.s:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/DatalogProgram.cpp.s
+.PHONY : DatalogProgram.cpp.s
+
 EOF_Automaton.o: EOF_Automaton.cpp.o
 
 .PHONY : EOF_Automaton.o
@@ -446,6 +473,33 @@ MultiplyAutomaton.s: MultiplyAutomaton.cpp.s
 MultiplyAutomaton.cpp.s:
 	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/MultiplyAutomaton.cpp.s
 .PHONY : MultiplyAutomaton.cpp.s
+
+Parser.o: Parser.cpp.o
+
+.PHONY : Parser.o
+
+# target to build an object file
+Parser.cpp.o:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/Parser.cpp.o
+.PHONY : Parser.cpp.o
+
+Parser.i: Parser.cpp.i
+
+.PHONY : Parser.i
+
+# target to preprocess a source file
+Parser.cpp.i:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/Parser.cpp.i
+.PHONY : Parser.cpp.i
+
+Parser.s: Parser.cpp.s
+
+.PHONY : Parser.s
+
+# target to generate assembly for a file
+Parser.cpp.s:
+	$(MAKE) -f CMakeFiles/project2.dir/build.make CMakeFiles/project2.dir/Parser.cpp.s
+.PHONY : Parser.cpp.s
 
 PeriodAutomaton.o: PeriodAutomaton.cpp.o
 
@@ -714,6 +768,9 @@ help:
 	@echo "... CommAutomaton.o"
 	@echo "... CommAutomaton.i"
 	@echo "... CommAutomaton.s"
+	@echo "... DatalogProgram.o"
+	@echo "... DatalogProgram.i"
+	@echo "... DatalogProgram.s"
 	@echo "... EOF_Automaton.o"
 	@echo "... EOF_Automaton.i"
 	@echo "... EOF_Automaton.s"
@@ -735,6 +792,9 @@ help:
 	@echo "... MultiplyAutomaton.o"
 	@echo "... MultiplyAutomaton.i"
 	@echo "... MultiplyAutomaton.s"
+	@echo "... Parser.o"
+	@echo "... Parser.i"
+	@echo "... Parser.s"
 	@echo "... PeriodAutomaton.o"
 	@echo "... PeriodAutomaton.i"
 	@echo "... PeriodAutomaton.s"

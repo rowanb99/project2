@@ -4,6 +4,7 @@
 using namespace std;
 
 #include "Lexer.h"
+#include "Parser.h"
 
 int main(int argc, char** argv) {
 
@@ -27,15 +28,13 @@ int main(int argc, char** argv) {
     //cout << fileInputString << endl;                      // Confirms that file stringified
     fileInput.close();
 
-    //cout << "Initiating Test sequence..." << endl << "Overwriting input string..." << endl;
-    //fileInputString = "Queries";
-
     lexer->Run(fileInputString);
-    cout << lexer->lexerToString();
+    //cout << lexer->lexerToString(); //Use this and use in14.txt as arg if concerned that lexer is broke
+    Parser *parser = new Parser(lexer->lexerResults());
     //My stuff ends
 
 
     delete lexer;
-
+    delete parser;
     return 0;
 }
