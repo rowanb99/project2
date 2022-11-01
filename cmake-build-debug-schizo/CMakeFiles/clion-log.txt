@@ -1,4 +1,4 @@
-/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /users/guest/r/rowanb99/project-1 -B /users/guest/r/rowanb99/project-1/cmake-build-debug-schizo
+/usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" -S /users/guest/r/rowanb99/project2 -B /users/guest/r/rowanb99/project2/cmake-build-debug-schizo
 -- Configuring done
 -- Generating done
--- Build files have been written to: /users/guest/r/rowanb99/project-1/cmake-build-debug-schizo
+-- Build files have been written to: /users/guest/r/rowanb99/project2/cmake-build-debug-schizo
