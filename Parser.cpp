@@ -10,15 +10,12 @@ Parser::Parser(vector<struct Token *> lexerTokens) {
 }
 
 
-
-
-
 void Parser::Parse() {
-    try{
+    try {
         ParseDatalogProgram();
         program.PrintDatalog();
     }
-    catch(Token* wrongToken) {
+    catch (Token *wrongToken) {
         cout << "Failure!" << endl;
         cout << "  " << wrongToken->toString() << endl;
         return;
@@ -26,10 +23,7 @@ void Parser::Parse() {
 }
 
 
-
-
-
-DatalogProgram Parser::ParseDatalogProgram(){
+DatalogProgram Parser::ParseDatalogProgram() {
 
     //Checks that first token is scheme token. If not, throws exception
     if (MatchFunction(TokenType::SCHEMES))
@@ -108,53 +102,43 @@ DatalogProgram Parser::ParseDatalogProgram(){
 }
 
 
-
-
-
-void Parser::ParseScheme(){
+void Parser::ParseScheme() {
     line = "";
 
     //Checks that next token is ID token. If not, throws exception
     if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is LeftParen token. If not, throws exception
-    if (MatchFunction(TokenType::LEFT_PAREN)){
+    if (MatchFunction(TokenType::LEFT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks for tokens that match an IdList grammar. (If no such grammar, throws exception)
     ParseIdList();
 
     //Checks that next token is RightParen token. If not, throws exception
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Appends line to schemeVector
     program.schemesVector.push_back(line);
 }
-
-
-
 
 
 void Parser::ParseIdList() {
@@ -164,19 +148,17 @@ void Parser::ParseIdList() {
     }
 
     //Checks that next token is Comma token. If not, throws exception
-    if (MatchFunction(TokenType::COMMA)){
+    if (MatchFunction(TokenType::COMMA)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks for tokens that match another IdList grammar. (If no such grammar, throws exception)
@@ -185,12 +167,9 @@ void Parser::ParseIdList() {
 }
 
 
-
-
-
-void Parser::ParseSchemeList(){
+void Parser::ParseSchemeList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::FACTS)){
+    if (MatchFunction(TokenType::FACTS)) {
         return;
     }
 
@@ -202,12 +181,9 @@ void Parser::ParseSchemeList(){
 }
 
 
-
-
-
-void Parser::ParseFactList(){
+void Parser::ParseFactList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::RULES)){
+    if (MatchFunction(TokenType::RULES)) {
         return;
     }
 
@@ -219,55 +195,47 @@ void Parser::ParseFactList(){
 }
 
 
-
-
-
 void Parser::ParseFact() {
     //Resets the line
     line = "";
 
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is leftParen token. If not, throws exception
-    if (MatchFunction(TokenType::LEFT_PAREN)){
+    if (MatchFunction(TokenType::LEFT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is String token. If not, throws exception
-    if (MatchFunction(TokenType::STRING)){
+    if (MatchFunction(TokenType::STRING)) {
         line += tokensForParser[0]->getDescription();
         program.domainVector.push_back(tokensForParser[0]->getDescription());
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a stringList grammar. (If no such grammar, throws exception)
     ParseStringList();
 
     //Checks that next token is rightParen token. If not, throws exception
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is period token. If not, throws exception
-    if (MatchFunction(TokenType::PERIOD)){
+    if (MatchFunction(TokenType::PERIOD)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Appends line to factsVector
@@ -275,30 +243,25 @@ void Parser::ParseFact() {
 }
 
 
-
-
-
-void Parser::ParseStringList(){
+void Parser::ParseStringList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         return;
     }
 
     //Checks that next token is comma token. If not, throws exception
-    if (MatchFunction(TokenType::COMMA)){
+    if (MatchFunction(TokenType::COMMA)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is string token. If not, throws exception
-    if (MatchFunction(TokenType::STRING)){
+    if (MatchFunction(TokenType::STRING)) {
         line += tokensForParser[0]->getDescription();
         program.domainVector.push_back(tokensForParser[0]->getDescription());
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a stringList grammar. (If no such grammar, throws exception)
@@ -306,12 +269,9 @@ void Parser::ParseStringList(){
 }
 
 
-
-
-
-void Parser::ParseRuleList(){
+void Parser::ParseRuleList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::QUERIES)){
+    if (MatchFunction(TokenType::QUERIES)) {
         return;
     }
 
@@ -323,10 +283,7 @@ void Parser::ParseRuleList(){
 }
 
 
-
-
-
-void Parser::ParseRule(){
+void Parser::ParseRule() {
     //Resets the line
     line = "";
 
@@ -334,11 +291,10 @@ void Parser::ParseRule(){
     ParseHeadPredicate();
 
     //Checks that next token is colonDash token. If not, throws exception
-    if (MatchFunction(TokenType::COLON_DASH)){
+    if (MatchFunction(TokenType::COLON_DASH)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a predicate grammar. (If no such grammar, throws exception)
@@ -348,11 +304,10 @@ void Parser::ParseRule(){
     ParsePredicateList();
 
     //Checks that next token is period token. If not, throws exception
-    if (MatchFunction(TokenType::PERIOD)){
+    if (MatchFunction(TokenType::PERIOD)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Appends line to rulesVector
@@ -360,65 +315,53 @@ void Parser::ParseRule(){
 }
 
 
-
-
-
-void Parser::ParseHeadPredicate(){
+void Parser::ParseHeadPredicate() {
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is leftParen token. If not, throws exception
-    if (MatchFunction(TokenType::LEFT_PAREN)){
+    if (MatchFunction(TokenType::LEFT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match an idList grammar. (If no such grammar, throws exception)
     ParseIdList();
 
     //Checks that next token is RightParen token. If not, throws exception
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 }
 
 
-
-
-
-void Parser::ParsePredicate(){
+void Parser::ParsePredicate() {
     //Checks that next token is ID token. If not, throws exception
-    if (MatchFunction(TokenType::ID)){
+    if (MatchFunction(TokenType::ID)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Checks that next token is LeftParen token. If not, throws exception
-    if (MatchFunction(TokenType::LEFT_PAREN)){
+    if (MatchFunction(TokenType::LEFT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a parameter grammar. (If no such grammar, throws exception)
@@ -428,44 +371,35 @@ void Parser::ParsePredicate(){
     ParseParameterList();
 
     //Checks that next token is RightParen token. If not, throws exception
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 }
 
 
-
-
-
-void Parser::ParseParameter(){
+void Parser::ParseParameter() {
     //Checks that next token is string OR ID token. If not, throws exception
-    if ((MatchFunction(TokenType::STRING)) | (MatchFunction(TokenType::ID))){
+    if ((MatchFunction(TokenType::STRING)) | (MatchFunction(TokenType::ID))) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 }
 
 
-
-
-
-void Parser::ParsePredicateList(){
+void Parser::ParsePredicateList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::PERIOD)){
+    if (MatchFunction(TokenType::PERIOD)) {
         return;
     }
 
     //Checks that next token is comma token. If not, throws exception
-    if (MatchFunction(TokenType::COMMA)){
+    if (MatchFunction(TokenType::COMMA)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a predicate grammar. (If no such grammar, throws exception)
@@ -476,21 +410,17 @@ void Parser::ParsePredicateList(){
 }
 
 
-
-
-
-void Parser::ParseParameterList(){
+void Parser::ParseParameterList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::RIGHT_PAREN)){
+    if (MatchFunction(TokenType::RIGHT_PAREN)) {
         return;
     }
 
     //Checks that next token is comma token. If not, throws exception
-    if (MatchFunction(TokenType::COMMA)){
+    if (MatchFunction(TokenType::COMMA)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     // Checks for tokens that match a parameter grammar. (If no such grammar, throws exception)
@@ -501,10 +431,7 @@ void Parser::ParseParameterList(){
 }
 
 
-
-
-
-void Parser::ParseQuery(){
+void Parser::ParseQuery() {
     //Resets line
     line = "";
 
@@ -512,11 +439,10 @@ void Parser::ParseQuery(){
     ParsePredicate();
 
     //Checks that next token is Q-Mark token. If not, throws exception
-    if (MatchFunction(TokenType::Q_MARK)){
+    if (MatchFunction(TokenType::Q_MARK)) {
         line += tokensForParser[0]->getDescription();
         DeleteCurrentToken();
-    }
-    else
+    } else
         throw tokensForParser[0];
 
     //Appends line to queriesVector
@@ -524,12 +450,9 @@ void Parser::ParseQuery(){
 }
 
 
-
-
-
-void Parser::ParseQueryList(){
+void Parser::ParseQueryList() {
     // Base Case: Checks for lambda
-    if (MatchFunction(TokenType::EOF_TOKEN)){
+    if (MatchFunction(TokenType::EOF_TOKEN)) {
         return;
     }
 
@@ -541,18 +464,14 @@ void Parser::ParseQueryList(){
 }
 
 
-
-
-bool Parser::MatchFunction(TokenType correctTokenType){
-    Token* currentToken = tokensForParser[0];
-    if (correctTokenType == currentToken->getType()){
+bool Parser::MatchFunction(TokenType correctTokenType) {
+    Token *currentToken = tokensForParser[0];
+    if (correctTokenType == currentToken->getType()) {
         return true;
-    }
-    else{
+    } else {
         return false;
     }
 }
-
 
 
 void Parser::DeleteCurrentToken() {
@@ -560,19 +479,18 @@ void Parser::DeleteCurrentToken() {
 }
 
 
-void Parser::RemoveCommentTokens(vector<Token*> &myVector) {
+void Parser::RemoveCommentTokens(vector<Token *> &myVector) {
     for (int i = myVector.size() - 1; i >= 0; i--) {
         Token *token = myVector[i];
-        if (token->getType() == TokenType::COMMENT){
+        if (token->getType() == TokenType::COMMENT) {
             myVector.erase(myVector.begin() + i);
         }
     }
 }
 
 
-
 void Parser::PrintParserTokens() {
-    for (auto tokenInVector : tokensForParser) {
+    for (auto tokenInVector: tokensForParser) {
         cout << tokenInVector->Token::toString() << endl;
     }
     cout << "Total Tokens = " << tokensForParser.size();

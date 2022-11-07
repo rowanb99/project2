@@ -71,8 +71,6 @@ public:
     // Checks for tokens that match a queryList grammar
     void ParseQueryList();
 
-
-
     //Sanitizes the token vector, removing all tokens that have tokenType of comment
     void RemoveCommentTokens(vector <Token*> &myVector);
 

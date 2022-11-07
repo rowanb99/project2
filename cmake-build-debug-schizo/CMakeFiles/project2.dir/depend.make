@@ -26,6 +26,9 @@ CMakeFiles/project2.dir/CommAutomaton.cpp.o: ../CommAutomaton.cpp
 CMakeFiles/project2.dir/CommAutomaton.cpp.o: ../CommAutomaton.h
 CMakeFiles/project2.dir/CommAutomaton.cpp.o: ../Token.h
 
+CMakeFiles/project2.dir/DatalogProgram.cpp.o: ../DatalogProgram.cpp
+CMakeFiles/project2.dir/DatalogProgram.cpp.o: ../DatalogProgram.h
+
 CMakeFiles/project2.dir/EOF_Automaton.cpp.o: ../Automaton.h
 CMakeFiles/project2.dir/EOF_Automaton.cpp.o: ../EOF_Automaton.cpp
 CMakeFiles/project2.dir/EOF_Automaton.cpp.o: ../EOF_Automaton.h
@@ -78,6 +81,11 @@ CMakeFiles/project2.dir/MultiplyAutomaton.cpp.o: ../Automaton.h
 CMakeFiles/project2.dir/MultiplyAutomaton.cpp.o: ../MultiplyAutomaton.cpp
 CMakeFiles/project2.dir/MultiplyAutomaton.cpp.o: ../MultiplyAutomaton.h
 CMakeFiles/project2.dir/MultiplyAutomaton.cpp.o: ../Token.h
+
+CMakeFiles/project2.dir/Parser.cpp.o: ../DatalogProgram.h
+CMakeFiles/project2.dir/Parser.cpp.o: ../Parser.cpp
+CMakeFiles/project2.dir/Parser.cpp.o: ../Parser.h
+CMakeFiles/project2.dir/Parser.cpp.o: ../Token.h
 
 CMakeFiles/project2.dir/PeriodAutomaton.cpp.o: ../Automaton.h
 CMakeFiles/project2.dir/PeriodAutomaton.cpp.o: ../PeriodAutomaton.cpp

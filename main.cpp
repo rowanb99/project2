@@ -30,7 +30,7 @@ int main(int argc, char** argv) {
 
     lexer->Run(fileInputString);
     //cout << lexer->lexerToString(); //Use this and use in14.txt as arg if concerned that lexer is broke
-    Parser *parser = new Parser(lexer->lexerResults());
+    Parser* parser = new Parser(lexer->lexerResults());
     //My stuff ends
 
 

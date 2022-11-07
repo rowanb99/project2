@@ -26,6 +26,9 @@ CMakeFiles/project2.dir/CommAutomaton.cpp.o
  /users/guest/r/rowanb99/project2/CommAutomaton.cpp
  /users/guest/r/rowanb99/project2/CommAutomaton.h
  /users/guest/r/rowanb99/project2/Token.h
+CMakeFiles/project2.dir/DatalogProgram.cpp.o
+ /users/guest/r/rowanb99/project2/DatalogProgram.cpp
+ /users/guest/r/rowanb99/project2/DatalogProgram.h
 CMakeFiles/project2.dir/EOF_Automaton.cpp.o
  /users/guest/r/rowanb99/project2/Automaton.h
  /users/guest/r/rowanb99/project2/EOF_Automaton.cpp
@@ -78,6 +81,11 @@ CMakeFiles/project2.dir/MultiplyAutomaton.cpp.o
  /users/guest/r/rowanb99/project2/Automaton.h
  /users/guest/r/rowanb99/project2/MultiplyAutomaton.cpp
  /users/guest/r/rowanb99/project2/MultiplyAutomaton.h
+ /users/guest/r/rowanb99/project2/Token.h
+CMakeFiles/project2.dir/Parser.cpp.o
+ /users/guest/r/rowanb99/project2/DatalogProgram.h
+ /users/guest/r/rowanb99/project2/Parser.cpp
+ /users/guest/r/rowanb99/project2/Parser.h
  /users/guest/r/rowanb99/project2/Token.h
 CMakeFiles/project2.dir/PeriodAutomaton.cpp.o
  /users/guest/r/rowanb99/project2/Automaton.h
